@@ -45,6 +45,13 @@
     systems.url = "github:nix-systems/default";
   };
 
-  outputs = { self, ... }@inputs: {
-  };
+  outputs = inputs:
+    {
+      mkFlake = self:
+        let
+          self' = self // { inherit inputs; };
+          inputs' = inputs // { self = self'; };
+        in
+        inputs.flake-parts.lib.mkFlake { inputs = inputs'; };
+    };
 }
