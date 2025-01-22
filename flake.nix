@@ -1,5 +1,7 @@
 {
   inputs = {
+    blank.url = "github:divnix/blank";
+
     flake-compat.url = "github:edolstra/flake-compat";
 
     flake-parts = {
