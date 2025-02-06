@@ -28,7 +28,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nixpkgs-python = {
-      url = "github:cachix/nixpkgs-python";
+      # url = "github:cachix/nixpkgs-python";
+      # TODO: until <https://github.com/cachix/nixpkgs-python/pull/69>
+      url = "github:cachix/nixpkgs-python/create-pull-request/patch";
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
